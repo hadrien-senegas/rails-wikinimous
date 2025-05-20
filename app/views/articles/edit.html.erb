@@ -1,0 +1,15 @@
+<h1>EDIT ME</h1>
+
+<%= form_with model: @article do |f| %>
+  <%= f.label :title, class: "form-label" %>
+  <%= f.text_field :title, class: "form-control" %>
+  <%= f.label :content, class: "form-label" %>
+  <%= f.text_field :content, class: "form-control" %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+
+<p class="fa-solid fa-backward"><%= link_to "back to list", articles_path %></p>
+<%= link_to "Delete",
+  article_path(@article),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>

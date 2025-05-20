@@ -1,0 +1,9 @@
+<h2><%= @article.title %></h2>
+<p><%= @article.content %></p>
+<p><%= link_to "edit", edit_article_path %></p>
+
+<p><%= link_to "back", articles_path %></p>
+<%= link_to "Delete",
+  article_path(@article),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
